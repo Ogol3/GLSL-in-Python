@@ -1,0 +1,14 @@
+
+#version 330 core
+
+layout (location=0) in vec3 vertexPos; //locaties pos. en kleur aangeven, corresponderen met de attributes - 3D vector
+layout (location=1) in vec3 vertexColor; 
+
+out vec3 fragmentColor;
+
+//positiedata en fragment variabele registreren
+void main()
+{
+    gl_Position = vec4(vertexPos, 1.0); //OpenGL gebruikt 4D vectors voor posities
+    fragmentColor = vertexColor;
+}
